@@ -4,7 +4,8 @@
   "description": "BerryPod Server",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "nsp": "nsp check --output checkstyle"
   },
   "author": "Konsta Laakso",
   "license": "ISC",
@@ -12,6 +13,7 @@
     "hapi": "^15.0.3",
     "hapi-swagger": "^7.2.0",
     "inert": "^4.0.2",
+    "nes": "^6.3.1",
     "vision": "^4.1.0"
   },
   "devDependencies": {

@@ -1,6 +1,7 @@
 'use strict';
 
 const Hapi = require('hapi');
+const Nes = require('nes');
 const Inert = require('inert');
 const Vision = require('vision');
 const HapiSwagger = require('hapi-swagger');
@@ -22,6 +23,7 @@ const options = {
 };
 
 server.register([
+  Nes,
   Inert,
   Vision,
   {
