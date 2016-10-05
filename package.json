@@ -15,7 +15,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "lab",
     "nsp": "nsp check --output checkstyle"
   },
   "author": "Konsta Laakso",
@@ -28,6 +28,8 @@
     "vision": "^4.1.0"
   },
   "devDependencies": {
+    "code": "^4.0.0",
+    "lab": "^11.1.0",
     "nsp": "^2.6.1"
   }
 }
