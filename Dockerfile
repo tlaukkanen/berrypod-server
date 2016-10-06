@@ -1,4 +1,4 @@
-FROM alpine-node:4.6.0
+FROM mhart/alpine-node:4.6.0
 
 # Set working directory inside container
 WORKDIR /app
