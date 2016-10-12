@@ -1,40 +1,90 @@
+const Joi = require('joi');
+const Handlers = require('../handlers/handlers');
+
 module.exports = [
+
+  // Generic
   {
     method: 'GET',
     path: '/',
     config: {
-      handler: (req, res) => {
-        return res('Server is up and running');
-      },
+      handler: Handlers.getServerState,
       description: 'Root of the thing',
       notes: 'Just testing',
       tags: ['api']
     }
   },
 
+  // Profiles
   {
     method: 'GET',
-    path: '/profile',
+    path: '/api/v1/profile',
     config: {
-      handler: (req, res) => {
-        return res('Profile endpoint');
-      },
+      handler: Handlers.getProfile,
       description: 'Get profile information',
       notes: 'Just messing around with Swagger really',
-      tags: ['api']
+      tags: ['api', 'profile']
     }
   },
 
   {
     method: 'PUT',
-    path: '/profile',
+    path: '/api/v1/profile',
     config: {
-      handler: (req, res) => {
-        return res('You just put that thing in')
-      },
+      handler: Handlers.notYetImplemented,
       description: 'Update profile information',
       notes: 'I guess this could be one way to do it',
-      tags: ['api']
+      tags: ['api', 'profile']
+    }
+  },
+
+  // Devices
+  {
+    method: 'GET',
+    path: '/api/v1/devices',
+    config: {
+      handler: Handlers.notYetImplemented,
+      description: 'List all devices', 
+      notes: 'Add notes here',
+      tags: ['api', 'device']
+    }
+  },
+
+  {
+    method: 'GET',
+    path: '/api/v1/device/{deviceId}',
+    config: {
+      handler: Handlers.notYetImplemented,
+      description: 'Get information of a device',
+      notes: 'Add notes here',
+      tags: ['api', 'device']
+    }
+  },
+
+  {
+    method: 'PUT',
+    path: '/api/v1/device/{deviceId}',
+    config: {
+      handler: Handlers.notYetImplemented,
+      description: 'Update device information',
+      notes: 'Add notes here',
+      tags: ['api', 'device']
+    }
+  },
+
+  {
+    method: 'DELETE',
+    path: '/api/v1/device/{deviceId}',
+    config: {
+      handler: Handlers.notYetImplemented,
+      description: 'Delete device by Id',
+      notes: 'Add notes here',
+      tags: ['api', 'device'],
+      validate: {
+        params: {
+         deviceId : Joi.number().required().description('The id for the device')
+        }
+      }
     }
   }
 ];
