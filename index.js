@@ -16,10 +16,8 @@ server.connection({
 });
 
 const options = {
-  info: {
-    'title': 'BerryPod API Documentation',
-    'version': Pack.version
-  }
+  basePath: '/api/v1/',
+  info: { 'title': 'BerryPod API Documentation', 'version': Pack.version }
 };
 
 server.register([
